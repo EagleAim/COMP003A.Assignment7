@@ -59,8 +59,22 @@ namespace COMP003A.Assignment7
             }
         }
 
+        static void TraverseList(List<string> list)
+        {
+            foreach (var item in list)
+            {
+                Console.WriteLine(list);
+            }
+        }
 
-
+        static void TraverseListReverse(List<string> list)
+        {
+            list.Reverse();
+            foreach (var item in list)
+            {
+                Console.WriteLine(list);
+            }
+        }
 
     }
 }
