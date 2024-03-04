@@ -4,6 +4,8 @@
  * Purpouse: To show our ability to use lists and arrays.
  */
 
+using System.Xml.Serialization;
+
 namespace COMP003A.Assignment7
 {
     internal class Program
@@ -42,7 +44,22 @@ namespace COMP003A.Assignment7
             /// Console.WriteLine($"There are {count} {characterInput} in MiSsIsSiPpI"); save for later
         }
 
+       static void IsPalindrome(string word)
+        {
+            bool wordBool = Convert.ToBoolean(word);
 
+            string reversedWord;
+
+            if (reversedWord = wordBool) 
+            {
+                Console.WriteLine(true);
+            }
+
+            else (reversedWord != wordBool)
+            {
+                Console.WriteLine(false);
+            }
+        }
 
     }
 }
