@@ -44,22 +44,23 @@ namespace COMP003A.Assignment7
             /// Console.WriteLine($"There are {count} {characterInput} in MiSsIsSiPpI"); save for later
         }
 
-       static void IsPalindrome(string word)
-        {
-            bool wordBool = Convert.ToBoolean(word);
+       static void IsPalindrome(string word, string reversedWord)
+        { 
+            word.ToLower();
 
-            string reversedWord;
-
-            if (reversedWord = wordBool) 
+            if (reversedWord == word)
             {
-                Console.WriteLine(true);
+                Console.WriteLine("true");
             }
 
-            else (reversedWord != wordBool)
+            else
             {
-                Console.WriteLine(false);
+                Console.WriteLine("false");
             }
         }
+
+
+
 
     }
 }
