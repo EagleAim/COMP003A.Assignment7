@@ -5,6 +5,7 @@
  */
 
 using System.Xml.Serialization;
+using static System.Collections.Specialized.BitVector32;
 
 namespace COMP003A.Assignment7
 {
@@ -12,20 +13,73 @@ namespace COMP003A.Assignment7
     {
         static void Main(string[] args)
         {
+            sectionSeparator();
+            Console.WriteLine("CharacterCounter Section");
+            sectionSeparator();
 
+            Console.WriteLine("\t Please input a single letter");
+            var Letter = Console.ReadLine();
+            char charLetter = Convert.ToChar(Letter);
+
+            Console.WriteLine("\t Please input a Word");
+            var Word = Console.ReadLine();
+
+            characterCounter(charLetter, Word);
+
+            Console.WriteLine($"There are {count} {characterInput} in {Word}");
+
+
+
+            sectionSeparator();
+            Console.WriteLine("IsPalindrome Section");
+            sectionSeparator();
+
+            Console.WriteLine("\t Please input a word");
+            var Word1 = Console.ReadLine();
+
+            IsPalindrome(Word1);
+
+            Console.WriteLine($"Is the {word1} palindrome: {reversedWord}");
+
+            sectionSeparator();
+            Console.WriteLine("Add Section");
+            sectionSeparator();
+
+            List<string> names = new List<string>();
+            char userInput = default;
+
+            Console.WriteLine("Press any key to add more or (e) to exit.");
+            var userInput1 = Console.ReadLine();
+
+            do while (userInput1 != 'n')
+                {
+                    Console.WriteLine("Press any key to add more or (e) to exit.");
+
+                    if (userInput1 == 'e')
+                    {
+                        break;
+                    }
+                }
+
+
+
+            sectionSeparator();
+            Console.WriteLine("Traversal Section");
+            sectionSeparator();
+
+            TraverseList(names);
+
+            sectionSeparator();
+            Console.WriteLine("Reverse Traversal Section");
+            sectionSeparator();
+
+            TraverseListReverse(names);
         }
 
         static void sectionSeparator()
         {
             Console.WriteLine("".PadRight(50, '*'));
 
-        }
-
-        static void sectionSeparator(string fake)
-        {
-            sectionSeparator();
-            Console.WriteLine(fake);
-            sectionSeparator();
         }
 
         static void characterCounter(char characterInput, string word)
@@ -40,13 +94,13 @@ namespace COMP003A.Assignment7
             {
                 count++;
             }
-
-            /// Console.WriteLine($"There are {count} {characterInput} in MiSsIsSiPpI"); save for later
         }
 
-       static void IsPalindrome(string word, string reversedWord)
+       static void IsPalindrome(string word)
         { 
             word.ToLower();
+
+            var reversedWord;
 
             if (reversedWord == word)
             {
@@ -75,6 +129,5 @@ namespace COMP003A.Assignment7
                 Console.WriteLine(list);
             }
         }
-
     }
 }
