@@ -26,7 +26,7 @@ namespace COMP003A.Assignment7
 
             characterCounter(charLetter, Word);
 
-            Console.WriteLine($"There are {count} {characterInput} in {Word}");
+            Console.WriteLine($"There are {Letter} {charLetter} in {Word}");
 
 
 
@@ -35,11 +35,11 @@ namespace COMP003A.Assignment7
             sectionSeparator();
 
             Console.WriteLine("\t Please input a word");
-            var Word1 = Console.ReadLine();
+            var WordVar = Console.ReadLine();
 
-            IsPalindrome(Word1);
+            IsPalindrome(Word);
 
-            Console.WriteLine($"Is the {word1} palindrome: {reversedWord}");
+            Console.WriteLine($"Is the {WordVar} palindrome: {Word}");
 
             sectionSeparator();
             Console.WriteLine("Add Section");
@@ -51,16 +51,21 @@ namespace COMP003A.Assignment7
             Console.WriteLine("Press any key to add more or (e) to exit.");
             var userInput1 = Console.ReadLine();
 
-            do while (userInput1 != 'n')
-                {
-                    Console.WriteLine("Press any key to add more or (e) to exit.");
+            var Exit = "e";
 
-                    if (userInput1 == 'e')
-                    {
-                        break;
-                    }
+
+            do
+            {
+                if (userInput1 == Exit)
+                {
+                    break;
                 }
 
+                else
+                {
+                    Console.WriteLine("\tPress any key to add more or (e) to exit.");
+                }
+            } while (userInput1 != Exit);
 
 
             sectionSeparator();
@@ -100,7 +105,10 @@ namespace COMP003A.Assignment7
         { 
             word.ToLower();
 
-            var reversedWord;
+            string str = word;
+            char[] reversedWord = str.ToCharArray();
+            Array.Reverse(reversedWord);
+            string reversedStr = new string(reversedWord);
 
             if (reversedWord == word)
             {
