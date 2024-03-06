@@ -4,6 +4,7 @@
  * Purpouse: To show our ability to use lists and arrays.
  */
 
+using System.Diagnostics.Metrics;
 using System.Xml.Serialization;
 using static System.Collections.Specialized.BitVector32;
 
@@ -90,7 +91,7 @@ namespace COMP003A.Assignment7
         static void characterCounter(char characterInput, string word)
         {
             int characterINT = Convert.ToInt32(characterInput);
-            int wordINT = Convert.ToInt32(word);
+            var wordINT = Convert.ToInt32(word);
             int count = 0;
             characterInput = char.ToLower(characterInput);
             word = word.ToLower();
@@ -109,8 +110,10 @@ namespace COMP003A.Assignment7
             char[] reversedWord = str.ToCharArray();
             Array.Reverse(reversedWord);
             string reversedStr = new string(reversedWord);
+            var wordVar = Convert.ToInt32(word);
+            var reversedWordVar = Convert.ToInt32(reversedWord);
 
-            if (reversedWord == word)
+            if (reversedWordVar == wordVar)
             {
                 Console.WriteLine("true");
             }
